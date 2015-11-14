@@ -1,0 +1,39 @@
+# Data files - contact author for data
+*.csv
+*.xlsx
+
+# Compiled files
+*.pyc
+
+# C extensions
+*.so
+
+# Packaging
+build/**
+
+# Knitro debugging files
+*.log
+
+# Runtime output
+Results
+*.npy
+
+# LaTeX/Beamer extras
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.synctex.gz
+*.lb
+*.nav
+*.snm
+*.toc
+
+# Dropbox
+.dropbox.attr
+
+# Mac turds
+.DS_Store
+
+

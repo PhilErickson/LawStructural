@@ -1,0 +1,713 @@
+\documentclass{beamer}
+
+%\usepackage{beamerthemeshadow} %// Activate for custom appearance
+%\usetheme{Warsaw}
+\usetheme{Madrid}
+\setbeamertemplate{headline}{}
+\setbeamertemplate{footline}[frame number]
+\definecolor{uiGold}{RGB}{255,225,0}
+\usecolortheme[named=uiGold]{structure}
+\setbeamercolor{title}{fg=black}
+\setbeamercolor{frametitle}{fg=black}
+\setbeamercolor{blocktitle}{fg=black}
+\setbeamercolor{caption name}{fg=black}
+\setbeamercolor{button}{fg=black}
+\setbeamercolor{item projected}{fg=black}
+\setbeamertemplate{theorems}[numbered]
+
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{textpos}
+\usepackage{epstopdf}
+\usepackage{amsmath}
+\usepackage{bbm}
+
+% To add logo to upper right corner of slides.
+%\addtobeamertemplate{frametitle}{}{
+%\begin{textblock*}{90mm}(.95\textwidth,-.9cm)
+%\includegraphics[height=.8cm,width=.8cm]{../dome.jpg}
+%\end{textblock*}}
+
+
+\title{Information Asymmetry in Profit-generating Graduate Education Markets: A Structural Approach to Law Schools}
+\author{Philip J. Erickson}
+\institute{University of Iowa}
+\date{\today}
+
+
+%\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+%\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{assumption}{Assumption}[section]
+\newtheorem{remark}{Remark}[section]
+%\useoutertheme{infolines} 
+
+% Source:
+%   http://tex.stackexchange.com/questions/34921/
+%   how-to-overlap-images-in-a-beamer-slide
+\def\Put(#1,#2)#3{\leavevmode\makebox(0,0){\put(#1,#2){#3}}}
+
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\ind}{\mathbbm{1}}
+
+\begin{document}
+
+{
+\setbeamertemplate{footline}{} 
+\begin{frame}[noframenumbering]
+ \titlepage
+\end{frame}
+}
+
+\frame{
+  \frametitle{Introduction}
+  Difficulties in market for training lawyers
+  \begin{itemize}
+    \item High (and increasing) tuition
+    \item Few job openings (EMSI, BLS)
+    \item Stable, but not growing, real wages
+    \item More schools opening
+  \end{itemize}
+  Questions
+  \begin{itemize}
+    \item Too many law schools?
+    \item Too many law students? Mismatch problem?
+    % Too many: Enough that the expected returns from graduating from a given
+    % school are less than the price of purchasing that education
+    \item Tuition too high?
+  \end{itemize}
+  Approach
+  \begin{itemize}
+    \item Dynamic game (Ericson and Pakes ('95)), schools compete for students
+    \item Asymmetric information between schools and students - use exogenous shock
+  \end{itemize}
+}
+
+\frame{
+  \frametitle{Contributions}
+  \begin{itemize}
+    \item Add to information asymmetry/market failure literature
+    \begin{itemize}
+      \item Asymmetric information leads to matching problem: wrong students pay wrong price for product (not worth expenditure for current students, crowding out potentials)
+      \item Information helps consumers/producers self-correct
+    \end{itemize}
+    \item Market-specific empirical results
+    \begin{itemize}
+      \item Schools are affected differentially by information change
+      \item Producer (Consumer) surplus negatively (positively) affected
+      \item Total welfare increases by \$363 million
+    \end{itemize}
+    \item Application of EP model to education market
+    \item Integration of asymmetric information effect with EP
+  \end{itemize}
+}
+
+\frame{
+  \frametitle{Literature}
+  \begin{itemize}
+    \item {\bf Market-specific empirical results} [Rosen('92), Spur('87), Ehrenberg('88), Oyer and Schaefer('10, '10), MacIntyre and Simkovic('13)]
+    \item {\bf Application of Ericson Pakes ('95) framework to higher education} [Hickman('09), Azevedo('12), Fu('14), Fillmore('15)]
+    \item {\bf Integration of asymmetric information effect with EP}
+    \item {\bf Add to information asymmetry/market failure literature} [Manski('04), Arcidiacono, Hotz, Kang('11), Dranove, Kessler, McClellan, Satterthwaite('03), Jin and Sorenson('06)]
+  \end{itemize}
+  
+}
+
+
+\frame{
+  \frametitle{Information Structure}
+  \begin{itemize}
+    \item Information governed by ABA, published in ``ABA-LSAC Official Guide''
+    \item Pre-2010 primary ROI statistics:
+    \begin{itemize}
+      \item \% Placed in a job 9-months after graduation
+      \item \% In Law, Business, Government, public interest, clerk, academia
+    \end{itemize}
+    \item Wages guessed from BLS or NALP - not school conditional and low reporting
+  \end{itemize}
+}
+
+\frame{
+  \frametitle{Information Structure}
+  \begin{itemize}
+    \item Post-2010 ROI statistics
+    \begin{itemize}
+      \item 144 placement types
+      \item Example: \# Employed in a law firm with 11-25 employees, full-time, short-term
+    \end{itemize}
+    \item Informative:
+  \end{itemize}
+  \begin{table}[htdp]
+  \begin{center}
+  \begin{tabular}{lcccccc}
+  \hline
+  \hline
+  Firm Size & 2-10 & 11-25 & 26-50 & 51-100 & 101-250 & 251 or More \\
+  Salary & 73,000 & 73,000 & 86,00 & 91,000 & 110,000 & 130,000 \\
+  \hline
+  \end{tabular}
+  \end{center}
+  \caption{Median Lawyer Starting Salary per Firm Size (2011)}
+  \label{tab:nalp}
+  \end{table}
+  
+}
+
+\frame{
+  \frametitle{Data}
+  \label{fr:data}
+  School-level: ABA-LSAC Report and US News and World Report
+  \begin{itemize}
+    \item Unit of analysis: one school per year
+    \item Academic years beginning 1998-2013
+    \item Variables
+    \begin{itemize}
+      \item Quality of program: US News rank, placement, student/faculty ratio, Bar passage rate
+      \item Quality of students: undergrad GPA, LSAT
+      \item Revenue: class size, tuition
+      \item Cost to students: median grant, percent grants, room/board expenses, cost of books
+      \item Selectivity: accepted, acceptance rate
+      \item Private-info ROI: \%25/\%75 private sector starting salary, \% reporting
+    \end{itemize}
+  \end{itemize}
+  Student-level: LawSchoolNumbers.com
+  \begin{itemize}
+    \item Unit of analysis: possible student-school match
+    \item Includes applicant profile, name of school, match outcome
+  \end{itemize}
+}
+
+\frame{
+  \frametitle{Information Effect}
+  \begin{itemize}
+    \item Based off reporting change in 2010
+    \item Expected: Schools with new lower reports should have to adjust combination of tuition, quality thresholds, class size
+    \item How information is internalized:
+    \begin{itemize}
+      \item Direct report
+      \item US News Rank (information aggregation)
+    \end{itemize}
+    \item Both highly correlated
+  \end{itemize}
+}
+
+\frame{
+  \frametitle{Evidence of Information Effects}
+  \begin{figure}[htbp]
+    \begin{center}
+      \includegraphics[width=.6\textwidth]
+                      {../../Results/Initial/Figures/OverallRankAvecompact.pdf}
+    \end{center}
+  \end{figure}
+  
+  \Put(-75, 250){
+    \includegraphics[width=.6\textwidth]
+    {../../Results/Initial/Figures/OverallRankAveLegendcompact.pdf}
+  }
+}
+
+\frame{
+  \frametitle{Evidence of Information Effects}
+  \[
+  	y_{it} = \beta_0 + \beta_1 Rank_{it} + \beta_2 Post2010_t +
+  			     \beta_3 (Rank_{it} * Post2010_t) + \gamma X_{it} + \varepsilon_{it}
+  \]
+  
+  \begin{figure}[htbp]
+    \begin{center}
+      \includegraphics[width=.5\textwidth]
+                      {../../Results/FirstStage/Figures/rankDinDcompact.pdf}
+    \end{center}
+  \end{figure}
+  \hfill\hyperlink{fr:ratio}{\beamerbutton{Ratio}}
+}
+
+\frame{
+  \frametitle{Reduced Form Takeaways}
+  \begin{itemize}
+    \item Tuition and GPA more elastic than class size and LSAT
+    \item Consistent with inelastic supply wrt. demand
+    \item GPA vs. LSAT also consistent with high rank premium
+    \item New information gives some cardinality to rank
+  \end{itemize}
+}
+
+\frame{
+  \frametitle{Structural Model}
+  \label{fr:structural_model}
+  \begin{itemize}
+    \item Why do we need structural model?
+    \begin{itemize}
+      \item Welfare - rank premium and student problem
+      \item Entry/Exit
+    \end{itemize}
+    \item Dynamic endogenous capacity game (Ericson and Pakes ('95), Doraszelski and Satterthwaite ('10))
+    \item Schools compete with others for student enrollment (Fu ('04))
+    \begin{itemize}
+      \item Application, Admission, Enrollment
+      \item Embed subgame in Ericson and Pakes framework
+    \end{itemize}
+    \item Includes entry/exit decisions
+  \end{itemize}
+}
+
+\frame{
+  \frametitle{Players}
+  Schools
+  \begin{itemize}
+    \item Differentiated by rank $R_j$ (zero indicates non-participation)
+    \item State vector $(R, g)$, $R_j\in R$
+    \item Demand growth term $g$
+    \item $\overline{N}$ possible schools, $J$ participants
+    \item Fixed capacity $\overline{Q}_j$, $\sum_{j=1}^{\overline{N}}\overline{Q}_j < 1$
+  \end{itemize}
+  Students
+  \begin{itemize}
+    \item Unit mass
+    \item Ability endowment $A_i$
+    \item Observable signal of ability $(LSAT_i, GPA_i)$
+    \item $A\sim N(f_A(LSAT, GPA), \sigma_A^2)$
+  \end{itemize}
+}
+
+\frame{
+  \frametitle{Stage Game: Timing}
+  \begin{enumerate}
+    \item School announces tuition (Bertrand-type competition)
+    \item Students make application decisions, schools choose admission policies (endogenous capacity models)
+    \item Students learn results, make enrollment decisions
+  \end{enumerate}
+}
+
+\frame{
+  \frametitle{Stage Game: Payoffs}
+  Student Payoffs
+  \begin{itemize}
+    \item School specific:
+      \begin{align*}
+        u_{ij} &= \overline{u}(A_i, R_j, I) + \epsilon_{ij} \\
+        \epsilon_{ij}&\sim N(0, \sigma^2_u)
+      \end{align*}
+    \item Total: $U_{ij}(t) = u_{ij} - t_j$
+  \end{itemize}
+  School Payoffs
+  \begin{itemize}
+    \item Tuition revenue: $\tilde{\pi}_j = \int t_j dF_j(i)$
+    \item Net donations: $D(R_j; \delta) = \delta_1 R_j + \delta_2 R_j^2$
+    \item Entry/exit costs:
+    \[
+      \Phi(a_j; \kappa_j, \phi_j) =
+      \begin{cases}
+        -\kappa_j, & \text{ if the school is a new entrant} \\
+        \phi_j, & \text{ if the school exits}
+      \end{cases}
+    \]
+    \item Total profits: $\pi_j = \tilde{\pi}_j + D(r_j; \delta) + \Phi(a_j; \kappa_j, \phi_j)$
+  \end{itemize}
+}
+
+\frame{
+  \frametitle{Information}
+  School private information
+  \begin{itemize}
+    \item School $j$ receives signal for applicant $i$: $\nu_{ji}\sim N(0, \sigma_\nu^2)$
+    \item Expected ability: $E[A_i | LSAT_i, GPA_i, \nu_{ij}] = f_A(LSAT_i, GPA_i) + \nu_{ij}$
+  \end{itemize}
+  
+  Student private information
+  \begin{itemize}
+    \item Latent type: $Ai$
+    \item Preference shock: $\varepsilon_{ij}$
+  \end{itemize}
+}
+
+\frame{
+  \frametitle{Application, Admission, Enrollment}
+  Define $X_i = (LSAT_i, GPA_i)$,  $S \equiv (t, I, (R, g))$, $\varepsilon_i \equiv (\varepsilon_{ij})_{j\in J}$
+  
+  Value to admitted student
+  \begin{equation}
+    w_i(O_i, A_i, \varepsilon_i | S) = \max\{0, \max_{j\in O_i} U_{ij}(t)\}
+    \label{eq:val_students}
+  \end{equation}
+  Probability of $i$ being admitted to $j$
+  \[
+    p_j(A_i, X_i|S)
+  \]
+  Value of application portfolio $Y$
+  \begin{equation}
+    W(Y, A_i, X_i|S) \equiv \sum_{O\subseteq Y} \Pr(O|A_i, X_i, S)E[w(O, A_i, \varepsilon_i|S)] - C(|Y|)
+  \end{equation}
+  The probability that set $O$ of colleges admits student $i$
+  \begin{equation}
+    \Pr(O|A_i, X_i, S) = \prod_{j\in O}p_j(A_i, X_i|S)
+                         \prod_{j'\in Y\backslash O} (1 - p_{j'}(A_i, X_i|S)).
+  \end{equation}
+  Student application problem
+  \begin{equation}
+    \max_{Y\subseteq\{1, \dots, J\}}\{W(Y, A_i, X_i|S)\}
+  \end{equation}
+}
+
+\frame{
+  \frametitle{Dynamics and Timing}
+  Rank evolution
+  \begin{equation}
+    R_j' = f_R(R, x, \varepsilon_R; \psi) \in [1, \bar{R}]
+    \label{eq:rank_evol}
+  \end{equation}
+  with $x = (x_j)_{j=1, \dots, \overline{N}}$ and $x_j \equiv (LSAT_{jM}, GPA_{jM}, A_j)$
+  Dynamic timing:
+  \begin{enumerate}
+    \item Potential entrants draw fixed entry cost, make entry decision
+    \item Incumbents draw scrap value, make exit decision
+    \item Subsequent participants compete in application-admission game
+    \item Investment matures, entry/exit occurs
+    \item Rankings update
+  \end{enumerate}
+}
+
+\frame{
+  \frametitle{School Strategies and Value Functions}
+  School strategies
+  \begin{enumerate}
+    \item $\sigma_{j1}: (R_j, \nu_{ij}, X_i | t_j, I) \rightarrow \{0, 1\}$
+    \item $\sigma_{j2}: ((R_j, g), \xi_j|I) \rightarrow a_j$
+  \end{enumerate}
+  with $a_j$ tuition, entry/exit decisions, $\xi_j$ school's private information. Define $\sigma_j \equiv (\sigma_{j1}, \sigma_{j2})$
+  
+  Value Functions (Incumbent/Entrant)
+  \begin{align}
+    &V_{j}((R, g); \sigma_j, I, \theta) \label{eq:Vinc}\\
+    &= \max\left\{\pi_j + \max\left\{\phi_j, \beta\int E_{\xi_j}V_j((R', g');\sigma_j, I, \theta, \xi_j)dP(R'; R, \sigma_j, I)\right\}\right\} \notag
+  \end{align}
+  and
+  \begin{align}
+    &V_{J}((R, G); \sigma_j, I, \theta) \label{eq:Vent}\\
+    &= \max\left\{0, \beta\int E_{\xi_j}V_j((R', g');\sigma_j, I, \theta, \xi_j)dP(R'; R, \sigma_j, I) - \kappa_j\right\}. \notag
+  \end{align}
+  
+}
+
+\frame{
+  \frametitle{Application-Admission Equilibrium}
+  \begin{definition}
+    Given tuition profile $t$, information regime $I$ and rank vector $(R, g)$, a symmetric, anonymous application-admission equilibrium, denoted $AE(S)$ is the vector $(d(\cdot|\cdot), Y(\cdot|\cdot), \sigma_{j1}(\cdot|\cdot), p(\cdot|\cdot))$ such that
+    \begin{enumerate}
+      \item $d(\cdot|\cdot)$ is an optimal enrollment decision
+      \item Given $p(\cdot|\cdot)$, $Y(\cdot|\cdot)$ is an optimal college application portfolio
+      \item For every $j$, given $(d(\cdot|\cdot), Y(\cdot|\cdot), p_{-j}(\cdot|\cdot))$, $\sigma^*_{j1}(\cdot|\cdot)$ is an optimal admissions policy, and $\sigma^*_{j1}(\cdot|\cdot) = \sigma^*_{j'1}(\cdot|\cdot)$ if $R_j = R_{j'}$
+      \item $p_j(\cdot|\cdot) = \int\sigma^*_{j1}(\cdot|\cdot)\Phi(0, \sigma_\nu^2)$
+    \end{enumerate}
+  \end{definition}
+}
+
+\frame{
+  \frametitle{Markov-perfect Equilibrium}
+  \begin{definition}
+    A symmetric, anonymous, Markov-perfect equilibrium for the market for training lawyers is the vector $(\sigma^*_j, d(\cdot|\cdot), Y(\cdot|\cdot), \sigma_{j1}(\cdot|\cdot), p(\cdot|\cdot))$ such that
+    \begin{enumerate}
+      \item For every $t$, $(d(\cdot|\cdot), Y(\cdot|\cdot), \sigma_{j1}(\cdot|\cdot), p(\cdot|\cdot))$ constitutes an AE(t)
+      \item For every $j$, given $\sigma^*_{-j2}$, $\sigma^*_{j2}$ is optimal for college $j$ and $\sigma^*_{j2} = \sigma^*_{j'2}$ if $R_j = R_{j'}$
+    \end{enumerate}
+  \end{definition}
+}
+
+\frame{
+  \frametitle{Empirical Strategy}
+  Estimate entire game using Bajari, Benkard, Levin ('07) (BBL)
+  \begin{itemize}
+    \item Flexibly estimate first-stage policy functions, take as optimal
+    \item Forward simulate value functions for optimal and perturbed policies
+    \item Construct minimum-distance estimator based on equilibrium definition
+  \end{itemize}
+}
+
+\frame{
+	\frametitle{Identifying Assumptions}
+		\begin{assumption}
+		All schools play the same Markov-perfect equilibrium.
+		\label{as:unique}
+	\end{assumption}
+    Restricting to symmetric, anonymous equilibria. Proof of existence from Doraszelski and Satterthwaite ('10).
+	\begin{assumption}
+	  Schools assume that information structure is permanent.
+	\end{assumption}
+  \begin{assumption}
+    Let $\underline{R}$ be the least profitable ranking for a school. The mean and variance of the distribution of scrap values are such that
+    \begin{enumerate}
+      \item $\mu_\phi = \{\mu_\phi : \Pr(a=\text{exit}|R_j=\underline{R}, \text{No info}) < 0.01\}$
+      \item $\sigma^2_\phi = \sigma^2_\kappa$
+    \end{enumerate}
+    \label{as:scrap}
+  \end{assumption}
+  Gives upper-bound identification
+}
+
+\frame{
+  \frametitle{Application-Admission Game}
+  Estimates for stage $k \in {1, 2, 3}$ and a student $i$ and school $j$ using gradient boosted classification trees:
+  \begin{equation}
+    f_k(LSAT_i, GPA_i, R_j, t_j, I_{\{0, 1\}}, year) \rightarrow 
+    (0, 1)
+    \label{eq:fs_appadmit_stages}
+  \end{equation}
+  \begin{itemize}
+    \item Could use brute force approach (simulate market per period)
+    \item Computationally intractable
+    \item Instead, use flexible estimates in \eqref{eq:fs_appadmit_stages} to simulate outcome functions
+      \[
+        \tilde{f}(R_j, t_j, I_{\{0, 1\}}, year) \rightarrow
+        ([120, 180], [0,1], \mathbb{R}^+)'
+      \]
+      for $LSAT$, $GPA$, and class size. 
+    \item Estimate with boosted regression trees based on simulated outcomes
+    \item Flavor of Hotz and Miller ('93) and 2SLS
+  \end{itemize}
+}
+
+\frame{
+  \frametitle{Tuition and State}
+  Tuition
+  \begin{itemize}
+    \item Estimate with gradient boosted regression tree
+    \item Use to fit the mapping
+      \[
+        f_T(R_j, I_{\{0, 1\}}, year) \rightarrow \mathbb{R}
+      \]
+  \end{itemize}
+  Rank
+  \begin{itemize}
+    \item First, estimate using simple tobit model
+      \[
+        \tilde{R}'_{j} = f(\psi_0 + \psi_1 R_j + \psi_x x_j + \varepsilon_R)
+      \]
+    \item After standard expected value, normalize to discrete ranks (similar to US News process)
+  \end{itemize}
+}
+
+\frame{
+  \frametitle{BBL Estimator}
+  \begin{align*}
+  	V_j((R, g); \sigma, I, \theta) &= \mathbb{E}\left[\sum_{t=0}^{\infty}\beta^t\Psi_j(\sigma, (R_t, g_t), \varepsilon_t|(R_0, g_0) = (R, g))\right]\cdot \theta \\
+    &= {\bf W}_j((R, g); \sigma)\cdot \tilde{\theta}
+  \end{align*}
+  \[
+  	\Psi_j = [\tilde{\pi}_j, r_j, r_j^2]'
+  \]
+  \[
+    \tilde{\theta}\equiv[1, \delta_1, \delta_2]
+  \]
+  \begin{equation}
+    W_j((R, g); \sigma_j^*, \sigma_{-j}^*)\cdot\tilde{\theta} \geq
+    W_j((R, g); \tilde{\sigma}_j, \sigma_{-j}^*)\cdot\tilde{\theta}
+    \label{eq:eqbm_condition}
+  \end{equation}
+  \begin{equation}
+    m(\tilde{\sigma}_j; \tilde{\theta}) = [
+      W_j((R, g); \sigma_j^*, \sigma_{-j}^*) -
+      W_j((R, g); \tilde{\sigma}_j, \sigma_{-j}^*)
+    ]\cdot\tilde{\theta}.
+  \end{equation}
+  \begin{equation}
+    \min_{\tilde{\theta}}Q_n(\tilde{\theta}) = \frac{1}{K}\sum_{k=1}^K
+      1(m(\tilde{\sigma}_{j, k}; \tilde{\theta}) > 0)
+      m(\tilde{\sigma}_{j, k}; \tilde{\theta})^2,
+  \end{equation}
+}
+
+\frame{
+  \frametitle{First-stage Estimates: Application-Admission Game}
+  \label{fr:first_stage_app_admit}
+  \begin{figure}[htbp]
+    \begin{center}
+      \includegraphics[width=0.7\textwidth]{../../Results/FirstStage/Figures/appadmit_importance.pdf}
+      \caption{Application-Admission Game: Variable Importance}
+      \label{fig:app_admit_importance}
+    \end{center}  
+  \end{figure}
+  \hfill\hyperlink{fr:dynamics}{\beamerbutton{Dynamics}}
+}
+
+\frame{
+  \frametitle{Second Stage: Conditional Producer Surplus}
+  \label{fr:conditional_producer_surplus}
+  \begin{figure}[htbp]
+    \begin{center}
+      \includegraphics[width=.5\textwidth]
+                      {../../Results/SecondStage/Figures/value_diff.pdf}
+    \end{center}
+  \end{figure}
+  \hfill\hyperlink{fr:val_funs}{\beamerbutton{Value Functions}}
+}
+
+\frame{
+  \frametitle{Second Stage: Welfare Change}
+  Producer Surplus
+  \begin{itemize}
+    \item Change calculated with $\Delta V(R) = V(R | info=1) - V(R | info=0)$
+    \item Mean estimate:
+      \[
+        \Delta PS = \sum_{j=1}^{\overline{N}}\Delta V(\hat{R})_j \approx -\$212 \text{ million}
+      \]
+  \end{itemize}
+  Consumer Surplus
+  \begin{itemize}
+    \item Value for $i$ of attending $j$ given by $U_{ij}(t)$
+    \item Identification given by
+      \[
+        Pr(U_{ij}(t) > 0) = f_M(LSAT_i, GPA_i, Rank_j, Tuition_j) \equiv f_{Mij}
+      \]
+    \item Value of student $i$'s participation in market previously defined, denoted (with abuse of notation) $W_i(I=\{0, 1\})$
+    \item Change in surplus for $i$: $\Delta W_i \equiv W_i(I=1) - W_i(I=0)$
+    \item Mean estimate:
+      \[
+        \Delta CS = \int \Delta W_i dG(i) \approx \$575\text{ million}
+      \]
+  \end{itemize}
+}
+
+\frame{
+  \frametitle{Total Surplus}
+  \[
+    \Delta TS = \Delta SS + \Delta PS = \$363\text{ million}
+  \]
+}
+
+\frame{
+  \frametitle{Conclusion}
+  \begin{itemize}
+    \item Not necessarily too many students being produced, but uninformed students were attending suboptimal programs and willing students were being driven out
+    \item Policy can improve match, slow rate of entrance, and increase probability of school shut-down
+    %\item Information does not change school profits or entry rates, but improve student welfare by (partially) mitigating mismatch problem
+    \item General application: Information can strictly improve welfare by (partially) mitigating mismatch problem
+  \end{itemize}
+}
+
+
+% -------------- %
+%    APPENDIX    %
+% -------------- %
+\frame{
+  \frametitle{Direct Report vs Aggregation}
+  \label{fr:ratio}
+  Direct Report
+  \begin{itemize}
+    \item Key indicator: ratio of full-information expected wages to partial-information expected wages:
+    \[ Ratio_i = \sum \omega_i placement_i / \sum placement_i \]
+    \item Weights $\omega_i$ determined by expected wages in placement type
+    \item Transparency ratio highly persistent
+    \item Impute over schools in time period for placement ``types''
+  \end{itemize}
+  Aggregation
+  \begin{itemize}
+    \item Included in rank calculation
+    \item Used in conjunction with direct report
+    \item Ranks now both ordinal and cardinal!
+  \end{itemize}
+}
+
+\frame{
+  \frametitle{Evidence of Information Effects: Ratio}
+  \begin{figure}[htbp]
+    \begin{center}
+      \includegraphics[width=.6\textwidth]
+                      {../../Results/Initial/Figures/RatioAvecompact.pdf}
+    \end{center}
+  \end{figure}
+  
+  \Put(-75, 250){
+    \includegraphics[width=.6\textwidth]
+    {../../Results/Initial/Figures/RatioAveLegendcompact.pdf}
+  }
+}
+
+\frame{
+  \frametitle{Evidence of Information Effects: Ratio}
+  \[
+  	y_{it} = \beta_0 + \beta_1 Ratio_{it} + \beta_2 Post2010_t +
+  			     \beta_3 (Ratio_{it} * Post2010_t) + \gamma X_{it} + \varepsilon_{it}
+  \]
+  
+  \begin{figure}[htbp]
+    \begin{center}
+      \includegraphics[width=.5\textwidth]
+                      {../../Results/FirstStage/Figures/ratioDinDcompact.pdf}
+    \end{center}
+  \end{figure}
+  \hfill\hyperlink{fr:structural_model}{\beamerbutton{Back}}
+}
+
+
+%
+%    RELATIVE VARIBALE IMPORTANCE
+%
+
+
+%
+%    MARKET DYNAMICS
+%
+
+\frame{
+  \frametitle{Market Dynamics - Tuition}
+  \label{fr:dynamics}
+  \begin{figure}[htbp]
+    \begin{center}
+      \includegraphics[width=.8\textwidth]
+                      {../../Results/SecondStage/Figures/Dynamics/Tuitionquantiles.pdf}
+    \end{center}
+  \end{figure}
+}
+
+\frame{
+  \frametitle{Market Dynamics - GPA}
+  \begin{figure}[htbp]
+    \begin{center}
+      \includegraphics[width=.8\textwidth]
+                      {../../Results/SecondStage/Figures/Dynamics/UndergraduatemedianGPAquantiles.pdf}
+    \end{center}
+  \end{figure}
+}
+
+\frame{
+  \frametitle{Market Dynamics - LSAT}
+  \begin{figure}[htbp]
+    \begin{center}
+      \includegraphics[width=.8\textwidth]
+                      {../../Results/SecondStage/Figures/Dynamics/MedianLSATquantiles.pdf}
+    \end{center}
+  \end{figure}
+}
+
+\frame{
+  \frametitle{Market Dynamics - Demand}
+  \begin{figure}[htbp]
+    \begin{center}
+      \includegraphics[width=.8\textwidth]
+                      {../../Results/SecondStage/Figures/Dynamics/demandquantiles.pdf}
+    \end{center}
+  \end{figure}
+  
+  \hfill\hyperlink{fr:first_stage_app_admit}{\beamerbutton{Back}}
+}
+
+%
+%    VALUE FUNCTIONS
+%
+
+\frame{
+  \frametitle{Market Dynamics - Tuition}
+  \label{fr:val_funs}
+  \begin{figure}[htbp]
+    \begin{center}
+      \includegraphics[width=.6\textwidth]
+                      {../../Results/SecondStage/Figures/value.pdf}
+    \end{center}
+  \end{figure}
+  \hfill\hyperlink{fr:conditional_producer_surplus}{\beamerbutton{Back}}
+}
+
+
+\end{document}

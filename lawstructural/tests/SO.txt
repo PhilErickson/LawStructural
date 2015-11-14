@@ -1,0 +1,14 @@
+I've noticed that every once in a while, someone will write a class in python along these lines
+
+    class Example(object):
+        def __init__(self):
+            self.x = 5
+        
+        def some_method(self):
+            # Do stuff to self.x
+        
+        def get_results(self):
+            return self.x
+
+My question is concerning the 'get_results' method, which seems superfluous to me since 'self.x' can be accessed directly with 'instance_name.x'. Is there a reason why this approach would be necessary/preferable? Is it an artifact of a programmer's experience with other languages?
+
